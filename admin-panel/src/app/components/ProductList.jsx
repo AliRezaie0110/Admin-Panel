@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { IoTrashOutline } from "react-icons/io5";
 import { GoPencil } from "react-icons/go";
+import Pagination from "./Pagination";
 
 export default function ProductList() {
   const [page, setPage] = useState(1);
@@ -55,18 +56,12 @@ export default function ProductList() {
         ))}
       </div>
 
-      <div className="flex justify-between items-center mt-6">
-        <Button onClick={() => setPage((p) => Math.max(p - 1, 1))} disabled={page === 1}>
-          قبلی
-        </Button>
-        <span className="text-sm">صفحه {page}</span>
-        <Button
-          onClick={() => setPage((p) => p + 1)}
-          disabled={page * limit >= data.total}
-        >
-          بعدی
-        </Button>
-      </div>
+      <Pagination
+        page={page}
+        limit={limit}
+        total={data.total}
+        onPageChange={(newPage) => setPage(newPage)}
+      />
 
       {isFetching && <p className="text-xs text-muted-foreground mt-2">در حال واکشی...</p>}
     </>
