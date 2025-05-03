@@ -42,11 +42,11 @@ export default function ProductList() {
             <CardContent className="flex flex-col gap-2">
               <p className="text-sm font-semibold text-right">{product.price.toLocaleString()} تومان</p>
               <div className="flex items-center gap-1 mt-auto">
-                <Button variant="outline" size="sm" className="flex items-center rounded-[4px] gap-1">
+                <Button variant="outline" size="sm" className="flex items-center rounded-[4px] hover:text-[#0EA5E9] cursor-pointer gap-1">
                   <GoPencil className="text-base" />
                   ویرایش
                 </Button>
-                <Button variant="destructive" size="sm" className="flex items-center rounded-[4px] gap-1">
+                <Button variant="destructive" size="sm" className="flex items-center rounded-[4px] hover:bg-white hover:text-red-600 cursor-pointer gap-1">
                   <IoTrashOutline className="text-base" />
                   حذف
                 </Button>
